@@ -77,7 +77,7 @@ export function FeaturedHeadphonesSection() {
         <div className="mt-10 flex justify-center">
           <Button
             size="lg"
-            className="rounded-full bg-primary px-10 py-5 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground hover:bg-primary/90"
+            className="rounded-full bg-transparent border border-secondary px-10 py-5 text-xs font-semibold uppercase tracking-[0.25em] text-primary-foreground hover:bg-secondary/90 hover:text-secondary-foreground/90"
           >
             Go to shop
           </Button>

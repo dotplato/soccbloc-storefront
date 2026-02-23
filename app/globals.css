@@ -128,6 +128,24 @@
   .animate-hero-progress {
     animation: hero-progress 9s linear forwards;
   }
+
+  .subsoccer-marquee {
+    @apply overflow-hidden;
+  }
+
+  .subsoccer-marquee-inner {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: subsoccer-marquee 22s linear infinite;
+    font-size: clamp(6rem, 60vw, 9rem);
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.572);
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  }
 }
 
 @layer components {
@@ -191,5 +209,14 @@
   }
   to {
     width: 100%;
+  }
+}
+
+@keyframes subsoccer-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
