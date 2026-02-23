@@ -1,6 +1,7 @@
 import Hero from "@/components/hero";
 import CategoryGrid from "@/components/category-grid";
 import FeaturedHeadphonesSection from "@/components/featured-headphones";
+import FeatureHighlightSection from "@/components/feature-highlight";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <CategoryGrid />
       <FeaturedHeadphonesSection />
+      <FeatureHighlightSection />
     </main>
   );
 }

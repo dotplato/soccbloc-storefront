@@ -57,7 +57,7 @@ const featuredHeadphones: FeaturedProduct[] = [
 
 export function FeaturedHeadphonesSection() {
   return (
-    <section className="bg-neutral-800 text-white">
+    <section className="bg-neutral-900 text-white">
       <div className="px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
         <div className="space-y-3 pb-8">
           <p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-white/60">
