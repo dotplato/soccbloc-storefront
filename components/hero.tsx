@@ -65,7 +65,7 @@ export function Hero() {
   const activeSlide = SLIDES[activeIndex];
 
   return (
-    <section className="relative h-[95vh] min-h-[540px] overflow-hidden rounded-b-[2.5rem] bg-black text-foreground">
+    <section className="relative h-[95vh] min-h-[540px] overflow-hidden  bg-black text-foreground">
       {/* Background videos */}
       {SLIDES.map((slide, index) => (
         <div
@@ -98,7 +98,7 @@ export function Hero() {
             </span>
 
             <div className="space-y-4 sm:space-y-5">
-              <h1 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+              <h1 className="text-7xl font-semibold tracking-tight text-white sm:text-7xl">
                 {activeSlide.title}
               </h1>
               <p className="max-w-xl text-sm text-white/80 sm:text-base">
@@ -122,10 +122,7 @@ export function Hero() {
               </Button>
             </div>
 
-            <div className="flex items-center gap-3 text-[0.7rem] text-white/75 sm:text-xs">
-              <span className="h-px w-10 bg-white/50" />
-              <span>Precision‑built audio for everyday play, training, and travel.</span>
-            </div>
+       
         </div>
 
         {/* Slider controls */}

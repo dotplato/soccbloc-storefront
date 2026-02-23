@@ -12,14 +12,14 @@ type Category = {
   description: string;
   cta: string;
   href: string;
-  badgeColor: "red" | "yellow" | "green" | "cyan";
+  badgeColor: "red" | "yellow" | "lime" | "cyan";
   imageSrc: string;
 };
 
 const categories: Category[] = [
   {
     id: "soundbars",
-    label: "SOUNDBARS",
+    label: "SUB SOCCER",
     title: "The soundbar brings cinematic performance and rich atmospheric detail.",
     description:
       "Slim profiles, bold sound. Level up match days, movie nights, and everything in between.",
@@ -30,7 +30,7 @@ const categories: Category[] = [
   },
   {
     id: "over-headphones",
-    label: "OVER HEADPHONES",
+    label: "FLAGSHIP",
     title: "Precision‑engineered sound with luxurious comfort in every detail.",
     description:
       "Over‑ear performance tuned for deep focus, travel, and training sessions.",
@@ -41,18 +41,18 @@ const categories: Category[] = [
   },
   {
     id: "earphones",
-    label: "EARPHONES",
+    label: "ANTHRACITE",
     title: "Immersive wireless sound with effortless comfort for every moment.",
     description:
       "Pocket‑size power with secure fit and all‑day battery, built for on‑the‑go listening.",
     cta: "Shop earphones",
     href: "/shop/earphones",
-    badgeColor: "green",
+    badgeColor: "lime",
     imageSrc: "/images/category-image.jpeg",
   },
   {
     id: "speakers",
-    label: "SPEAKERS",
+    label: "NEW SUBSOCCER",
     title:
       "A commanding soundstage with rich lows, vibrant mids, and crystalline highs.",
     description:
@@ -64,12 +64,6 @@ const categories: Category[] = [
   },
 ];
 
-const badgeColorClasses: Record<Category["badgeColor"], string> = {
-  red: "category-label--red",
-  yellow: "category-label--yellow",
-  green: "category-label--green",
-  cyan: "category-label--cyan",
-};
 
 export function CategoryGrid() {
   return (
@@ -81,7 +75,6 @@ export function CategoryGrid() {
               key={category.id}
               className="relative min-h-90  rounded-none overflow-hidden border-none bg-transparent p-0 text-white"
             >
-              <CategoryLabel text="SUB SOCCER SOUNDBARS" />
               <div className="absolute inset-0">
                 <div className="relative h-full w-full">
                   <Image
@@ -97,11 +90,8 @@ export function CategoryGrid() {
 
               <CardContent className="relative flex h-80 flex-col justify-between px-5 py-5  sm:px-6 sm:py-6 ">
                 <div className="space-y-4">
-                  <span className={cn("category-label", badgeColorClasses[category.badgeColor])}>
-                    {category.label}
-                  </span>
-                  <CategoryLabel color="#ff00ff" text="SUB SOCCER SOUNDBARS" />
-                
+                <CategoryLabel color={category.badgeColor}  text={category.label}/>
+
                 </div>
 
                 <div className="space-y-3 text-[1rem] text-white sm:text-sm">
@@ -109,7 +99,7 @@ export function CategoryGrid() {
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="px-0 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-white hover:bg-transparent hover:text-white/80"
+                    className="px-0 text-[0.7rem] font-semibold uppercase underline tracking-[0.18em] text-white hover:bg-transparent hover:text-white/80"
                   >
                     {category.cta}
                   </Button>
