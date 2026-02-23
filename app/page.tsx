@@ -1,6 +1,6 @@
 import Hero from "@/components/hero";
 import CategoryGrid from "@/components/category-grid";
-import FeaturedHeadphonesSection from "@/components/featured-headphones";
+import FeaturedProductsSection from "@/components/featured-products";
 import FeatureHighlightSection from "@/components/feature-highlight";
 import VideoFeatureGridSection from "@/components/video-feature-grid";
 import SubsoccerFeaturedSection from "@/components/subsoccer-featured";
@@ -11,7 +11,7 @@ export default function Home() {
     <main className="min-h-screen bg-background text-foreground">
       <Hero />
       <CategoryGrid />
-      <FeaturedHeadphonesSection />
+      <FeaturedProductsSection />
       <FeatureHighlightSection />
       <VideoFeatureGridSection />
       <SubsoccerFeaturedSection />

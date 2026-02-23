@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import { NavbarShell } from "@/components/navbar";
+import SecondaryNavbar, { NavbarShell } from "@/components/navbar";
 import { cn } from "@/lib/utils";
 
 type HeroSlide = {
@@ -19,20 +19,20 @@ type HeroSlide = {
 const SLIDES: HeroSlide[] = [
   {
     id: 1,
-    eyebrow: "ULTRA‑CLEAR SOUND",
-    title: "Hear Power. Feel Precision.",
+    eyebrow: "GAME ROOM ESSENTIAL",
+    title: "Soccer, Reimagined for Indoors",
     description:
-      "Engineered for superior performance with advanced drivers, ultra‑clean acoustics, and immersive isolation. This is more than sound—it’s a precision‑built experience.",
+      "Engineered for superior performance with advanced drivers,A creative, competitive, and social football experience like no other.",
     primaryCta: "Experience the sound",
     secondaryCta: "Shop headphones",
     videoSrc: "/videos/hero-1.mp4",
   },
   {
     id: 2,
-    eyebrow: "WIRELESS FREEDOM",
-    title: "Unplug. Stay Connected.",
+    eyebrow: "GAME STORE REINVENTED",
+    title: "A Lifestyle not a Game",
     description:
-      "Seamless Bluetooth connectivity, all‑day battery life, and intuitive controls give you studio‑quality sound wherever you go.",
+      "Crafted tables for football lovers who want more than just watching.",
     primaryCta: "Explore wireless",
     secondaryCta: "View collection",
     videoSrc: "/videos/hero-1.mp4",
@@ -40,9 +40,9 @@ const SLIDES: HeroSlide[] = [
   {
     id: 3,
     eyebrow: "IMMERSIVE DETAIL",
-    title: "Every Note. Every Match.",
+    title: "Kick. Pass. Dominate.",
     description:
-      "From playlists to podcasts to match‑day commentary, socc bloc gear keeps you locked into every detail with comfort that lasts.",
+      "Discover the game-changing way to play soccer with friends and family.",
     primaryCta: "Discover socc bloc",
     secondaryCta: "Shop all products",
     videoSrc: "/videos/hero-1.mp4",
@@ -90,6 +90,9 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col px-4 py-4 sm:px-6 lg:px-10 lg:py-6">
+        <div className="-mx-4 -mt-4 sm:-mx-6 sm:-mt-6 lg:-mx-10 lg:-mt-6">
+          <SecondaryNavbar />
+        </div>
         <NavbarShell />
 
         <div className="mt-10 flex flex-1 flex-col justify-center gap-8 sm:mt-16 max-w-xl">

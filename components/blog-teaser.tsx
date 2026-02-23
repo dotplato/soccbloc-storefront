@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 type BlogPostPreview = {
@@ -86,14 +86,17 @@ export function BlogTeaserSection() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <Button
-            asChild
-            variant="outline"
-            size="sm"
-            className="rounded-full border-white/40 bg-transparent px-6 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-white hover:bg-white hover:text-black"
+          <Link
+            href="/blog"
+            className={buttonVariants({
+              variant: "outline",
+              size: "sm",
+              className:
+                "rounded-full border-white/40 bg-transparent px-6 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-white hover:bg-white hover:text-black",
+            })}
           >
-            <Link href="/blog">View all posts</Link>
-          </Button>
+            View all posts
+          </Link>
         </div>
       </div>
     </section>

@@ -7,9 +7,6 @@ export const FOOTER_LINK_GROUPS: FooterLinkGroup[] = [
     title: "Company",
     links: [
       { label: "Our story", href: "/about" },
-      { label: "Careers", href: "/careers" },
-      { label: "Press", href: "/press" },
-      { label: "Influencers", href: "/influencers" },
       { label: "Find a store", href: "/stores" },
       { label: "Your privacy choices", href: "/privacy" },
     ],
@@ -17,11 +14,11 @@ export const FOOTER_LINK_GROUPS: FooterLinkGroup[] = [
   {
     title: "Resources",
     links: [
-      { label: "Wholesale", href: "/wholesale" },
-      { label: "Become a retailer", href: "/retailers" },
-      { label: "Corporate orders", href: "/corporate" },
-      { label: "Store locator", href: "/stores" },
-      { label: "Affiliates", href: "/affiliates" },
+      { label: "Wholesale", href: "/shop" },
+      { label: "Become a retailer", href: "/blog" },
+      { label: "Corporate orders", href: "/blog" },
+      { label: "Store locator", href: "/abput" },
+      { label: "Affiliates", href: "/contact" },
     ],
   },
   {
@@ -38,9 +35,7 @@ export const FOOTER_LINK_GROUPS: FooterLinkGroup[] = [
     title: "Support",
     links: [
       { label: "Contact us", href: "/contact" },
-      { label: "Delivery", href: "/delivery" },
-      { label: "Shipping & returns", href: "/returns" },
-      { label: "My account", href: "/account" },
+      { label: "Shipping & returns", href: "/contact" },
     ],
   },
 ];

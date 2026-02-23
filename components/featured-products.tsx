@@ -13,13 +13,13 @@ type FeaturedProduct = {
   highlight?: boolean;
 };
 
-const featuredHeadphones: FeaturedProduct[] = [
+const featuredProducts: FeaturedProduct[] = [
   {
     id: "silence-x-elite",
     imageSrc: "/images/subsoccer-product-1.png",
-    imageAlt: "Silence X Elite Model headphones in copper finish",
-    eyebrow: "HORIZON AUDIO LABS",
-    title: "Silence X Elite Model",
+    imageAlt: "Subsoccer S7 – Anthracite",
+    eyebrow: "FLAGSHIP",
+    title: "Subsoccer S7 – Anthracite",
     price: "$199.00",
     compareAtPrice: "$249.00",
     shopUrl: "#",
@@ -27,9 +27,9 @@ const featuredHeadphones: FeaturedProduct[] = [
   {
     id: "aura-one",
     imageSrc: "/images/subsoccer-product-1.png",
-    imageAlt: "Aura One Signature Edition headphones in champagne gold",
-    eyebrow: "AURUM ACOUSTICS",
-    title: "Aura One Signature Edition",
+    imageAlt: "The New Subsoccer S3",
+    eyebrow: "NEW PORTABLE",
+    title: "The New Subsoccer S3",
     price: "$349.00",
     compareAtPrice: "$399.00",
     shopUrl: "#",
@@ -37,25 +37,17 @@ const featuredHeadphones: FeaturedProduct[] = [
   {
     id: "aether-pro",
     imageSrc: "/images/subsoccer-product-1.png",
-    imageAlt: "Aether Pro Advanced Series headphones in navy and silver",
-    eyebrow: "VERTEX SOUNDWORKS",
-    title: "Aether Pro Advanced Series",
+    imageAlt: "Subsoccer S7 - White",
+    eyebrow: "LATEST",
+    title: "Subsoccer S7 - White",
     price: "$429.00",
     shopUrl: "#",
     highlight: true,
   },
-  {
-    id: "element-studio",
-    imageSrc: "/images/subsoccer-product-1.png",
-    imageAlt: "Element Studio Master Edition headphones in yellow and silver",
-    eyebrow: "NORTHPEAK ENGINEERING",
-    title: "Element Studio Master Edition",
-    price: "From $499.00",
-    shopUrl: "#",
-  },
+ 
 ];
 
-export function FeaturedHeadphonesSection() {
+export function featuredProductsSection() {
   return (
     <section className="bg-neutral-900 text-white">
       <div className="px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
@@ -69,7 +61,7 @@ export function FeaturedHeadphonesSection() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {featuredHeadphones.map((product) => (
+          {featuredProducts.map((product) => (
             <ProductCard key={product.id} {...product} />
           ))}
         </div>
@@ -87,5 +79,5 @@ export function FeaturedHeadphonesSection() {
   );
 }
 
-export default FeaturedHeadphonesSection;
+export default featuredProductsSection;
 

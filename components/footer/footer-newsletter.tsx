@@ -17,13 +17,9 @@ export function FooterNewsletter() {
           <span className="tracking-[0.35em]">SOCC BLOC</span>
         </Link>
         <p className="mt-4 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-white/60">
-          Stay connected to the world of better sound
-        </p>
+SUBSCRIBE TO STAY CONNECTED        </p>
         <p className="mt-6 text-sm leading-relaxed text-white/90 sm:text-base">
-          Join our community of listeners who believe every moment deserves great
-          audio. From new product releases to expert tips and exclusive stories,
-          our emails are designed to inspire the way you listen, live, and
-          discover what sound can truly be.
+        We transform how your experience soccer! Our Subsoccer experience is something special, and we want you to experience it every day. Believe with us and start your journey today.
         </p>
         <form className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <Input

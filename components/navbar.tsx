@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronDown, Menu, Search, ShoppingCart, User } from "lucide-react";
 
@@ -16,9 +16,9 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-function SecondaryNavbar() {
+export default function SecondaryNavbar() {
   return (
-    <div className="fixed inset-x-0 top-0 z-40 bg-lime-400 text-black">
+    <div className="bg-lime-400 text-black ">
       <div className="flex items-center justify-between px-4 py-1.5 text-[0.7rem] font-medium tracking-wide sm:px-6 sm:text-xs lg:px-10">
         <nav className="flex items-center gap-4">
           <Link
@@ -157,49 +157,74 @@ export function Navbar() {
   );
 }
 
+const SCROLL_UP_THRESHOLD = 80;
+
 export function NavbarShell({
   className,
 }: {
   className?: string;
 }) {
-  const [scrolled, setScrolled] = useState(false);
+  const [showFixedNav, setShowFixedNav] = useState(false);
+  const [fixedNavVisible, setFixedNavVisible] = useState(false);
   const [hovered, setHovered] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      const current = window.scrollY;
+      const scrollingUp = current < lastScrollY.current;
+      const pastThreshold = current > SCROLL_UP_THRESHOLD;
+
+      setShowFixedNav(pastThreshold);
+
+      if (!pastThreshold) {
+        setFixedNavVisible(false);
+      } else if (scrollingUp || hovered) {
+        setFixedNavVisible(true);
+      } else {
+        setFixedNavVisible(false);
+      }
+      lastScrollY.current = current;
     };
 
+    lastScrollY.current = window.scrollY;
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
-
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const isSolid = scrolled || hovered;
+  }, [hovered]);
 
   return (
-    <div
-      className={cn(
-        "relative z-20",
-        className
-      )}
-    >
-      <SecondaryNavbar />
-      <div
-        className={cn(
-          "sticky top-8 z-30 mt-2 transition-colors duration-300",
-          isSolid
-            ? "bg-neutral-900/95 shadow-lg shadow-black/40"
-            : "bg-transparent"
-        )}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
+    <div>
+
+
+  
+    <div className={cn("relative z-20", className)}>
+      {/* Secondary bar: scrolls with page (not fixed) */}
+      
+
+      {/* Main navbar: in flow, visible when at top */}
+      <div className="mt-2">
         <div className="px-4 py-3 sm:px-6 lg:px-10">
           <Navbar />
         </div>
       </div>
+
+      {/* Main navbar: fixed overlay, appears on scroll up when past threshold */}
+      {showFixedNav && (
+        <div
+          className={cn(
+            "fixed left-0 right-0 top-0 z-30 bg-neutral-900/95 shadow-lg shadow-black/40 transition-transform duration-300 ease-out",
+            fixedNavVisible ? "translate-y-0" : "-translate-y-full"
+          )}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+        >
+          <div className="px-4 py-3 sm:px-6 lg:px-10">
+            <Navbar />
+          </div>
+        </div>
+      )}
+    </div>
     </div>
   );
 }

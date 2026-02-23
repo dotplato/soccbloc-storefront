@@ -18,13 +18,7 @@ export function FooterBottom() {
         {/* Left: language, currency, copyright */}
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-4">
-            <button
-              type="button"
-              className="inline-flex items-center gap-1 text-sm text-white/80 hover:text-white"
-            >
-              English
-              <ChevronDown className="h-4 w-4" />
-            </button>
+           
             <button
               type="button"
               className="inline-flex items-center gap-1 text-sm text-white/80 hover:text-white"
@@ -34,15 +28,8 @@ export function FooterBottom() {
             </button>
           </div>
           <p className="text-xs text-white/60">
-            © {new Date().getFullYear()} Socc Bloc. All rights reserved.{" "}
-            <Link
-              href="https://www.shopify.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-white/80"
-            >
-              Powered by Shopify
-            </Link>
+            © {new Date().getFullYear()} <Link href="https://soccbloc.com">Socc Bloc.</Link> All rights reserved.{" "}
+         
           </p>
         </div>
 
