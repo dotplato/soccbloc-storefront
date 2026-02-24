@@ -1,5 +1,6 @@
 import { ProductCard } from "@/components/ui/product-card";
 import { Button } from "@/components/ui/button";
+import { FadeInUp } from "@/components/ui/fade-in-up";
 
 type FeaturedProduct = {
   id: string;
@@ -51,21 +52,26 @@ export function featuredProductsSection() {
   return (
     <section className="bg-neutral-900 text-white">
       <div className="px-4 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <div className="space-y-3 pb-8">
-          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-white/60">
-            Premium headphones
-          </p>
-          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl lg:text-[2.5rem]">
-            A curated selection of our headphones
-          </h2>
-        </div>
+        <FadeInUp>
+          <div className="space-y-3 pb-8">
+            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-white/60">
+              Premium headphones
+            </p>
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl lg:text-[2.5rem]">
+              A curated selection of our headphones
+            </h2>
+          </div>
+        </FadeInUp>
 
+        <FadeInUp delay={100}>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {featuredProducts.map((product) => (
             <ProductCard key={product.id} {...product} />
           ))}
         </div>
+        </FadeInUp>
 
+        <FadeInUp delay={200}>
         <div className="mt-10 flex justify-center">
           <Button
             size="lg"
@@ -74,6 +80,7 @@ export function featuredProductsSection() {
             Go to shop
           </Button>
         </div>
+        </FadeInUp>
       </div>
     </section>
   );

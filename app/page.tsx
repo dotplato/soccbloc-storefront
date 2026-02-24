@@ -1,3 +1,4 @@
+import { FadeInUp } from "@/components/ui/fade-in-up";
 import Hero from "@/components/hero";
 import CategoryGrid from "@/components/category-grid";
 import FeaturedProductsSection from "@/components/featured-products";
@@ -10,12 +11,24 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Hero />
-      <CategoryGrid />
-      <FeaturedProductsSection />
-      <FeatureHighlightSection />
-      <VideoFeatureGridSection />
-      <SubsoccerFeaturedSection />
-      <BlogTeaserSection />
+      <FadeInUp>
+        <CategoryGrid />
+      </FadeInUp>
+      <FadeInUp>
+        <FeaturedProductsSection />
+      </FadeInUp>
+      <FadeInUp>
+        <FeatureHighlightSection />
+      </FadeInUp>
+      <FadeInUp>
+        <VideoFeatureGridSection />
+      </FadeInUp>
+      <FadeInUp>
+        <SubsoccerFeaturedSection />
+      </FadeInUp>
+      <FadeInUp>
+        <BlogTeaserSection />
+      </FadeInUp>
     </main>
   );
 }

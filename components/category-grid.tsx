@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { FadeInUp } from "@/components/ui/fade-in-up";
 import { cn } from "@/lib/utils";
 import CategoryLabel from "./ui/category-label";
 
@@ -67,8 +68,9 @@ const categories: Category[] = [
 
 export function CategoryGrid() {
   return (
-    <section className="bg-black  text-white ">
-      <div className="flex flex-col ">
+    <section className="bg-black text-white">
+      <div className="flex flex-col">
+        <FadeInUp>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4">
           {categories.map((category) => (
             <Card
@@ -108,6 +110,7 @@ export function CategoryGrid() {
             </Card>
           ))}
         </div>
+        </FadeInUp>
       </div>
     </section>
   );

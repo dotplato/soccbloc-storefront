@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
+import { FadeInUp } from "@/components/ui/fade-in-up";
 
 export function SubsoccerFeaturedSection() {
   return (
@@ -18,6 +19,7 @@ export function SubsoccerFeaturedSection() {
       </div>
 
       <div className="relative flex h-full min-h-0 flex-1 flex-col justify-between px-4 py-6 sm:px-6 sm:py-8 lg:px-10 lg:py-8">
+        <FadeInUp>
         {/* Top: product + large scrolling text */}
         <div className="relative flex min-h-0 flex-1 items-start justify-center overflow-hidden pt-2">
             {/* Scrolling outline text behind product */}
@@ -42,9 +44,11 @@ export function SubsoccerFeaturedSection() {
               />
             </div>
         </div>
+        </FadeInUp>
 
         {/* Bottom: smaller copy + CTA */}
-        <div className="flex-shrink-0 max-w-lg space-y-2 pt-4 absolute mt-90">
+        <div className="absolute bottom-6 left-4 right-4 z-10 max-w-lg flex-shrink-0 space-y-2 sm:left-6 sm:right-6 lg:left-10 lg:right-10">
+          <FadeInUp delay={100}>
             <p className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-white/70">
               Hear what matters
             </p>
@@ -62,6 +66,7 @@ export function SubsoccerFeaturedSection() {
             >
               Bring it home
             </Button>
+          </FadeInUp>
         </div>
       </div>
     </section>

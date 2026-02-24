@@ -6,6 +6,7 @@ import { ChevronDown, Menu, Search, ShoppingCart, User } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Logo } from "@/components/ui/logo";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -55,7 +56,7 @@ export default function SecondaryNavbar() {
   );
 }
 
-export function Navbar() {
+export function Navbar({ logoWhite = true }: { logoWhite?: boolean }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -75,17 +76,7 @@ export function Navbar() {
 
       {/* Center: logo */}
       <div className="flex flex-1 items-center justify-center">
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-white font-semibold uppercase tracking-[0.25em]"
-        >
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-bold">
-            SB
-          </span>
-          <span className="hidden sm:inline text-xs tracking-[0.35em]">
-            SOCC BLOC
-          </span>
-        </Link>
+        <Logo href="/" width={120} height={36} white={logoWhite} />
       </div>
 
       {/* Right: search + icons */}
@@ -220,7 +211,7 @@ export function NavbarShell({
           onMouseLeave={() => setHovered(false)}
         >
           <div className="px-4 py-3 sm:px-6 lg:px-10">
-            <Navbar />
+            <Navbar logoWhite={false} />
           </div>
         </div>
       )}

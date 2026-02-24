@@ -1,4 +1,5 @@
 import { VideoFeatureCard } from "@/components/ui/video-feature-card";
+import { FadeInUp } from "@/components/ui/fade-in-up";
 
 const videoFeatures = [
   {
@@ -27,6 +28,7 @@ export function VideoFeatureGridSection() {
   return (
     <section className="bg-neutral-800 text-white">
       <div className="px-4 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <FadeInUp>
         <div className="grid gap-4 sm:grid-cols-2">
           {/* Left: single large feature */}
         
@@ -60,6 +62,7 @@ export function VideoFeatureGridSection() {
             />
           </div>
         </div>
+        </FadeInUp>
       </div>
     </section>
   );

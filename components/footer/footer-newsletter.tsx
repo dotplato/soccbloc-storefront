@@ -1,21 +1,12 @@
-import Link from "next/link";
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Logo } from "@/components/ui/logo";
 
 export function FooterNewsletter() {
   return (
     <section className="bg-neutral-800 py-14 text-center sm:py-16 lg:py-20">
       <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-10">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-xl font-semibold uppercase tracking-[0.25em] text-white"
-        >
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-bold">
-            SB
-          </span>
-          <span className="tracking-[0.35em]">SOCC BLOC</span>
-        </Link>
+        <Logo href="/" width={140} height={42} className="mx-auto" />
         <p className="mt-4 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-white/60">
 SUBSCRIBE TO STAY CONNECTED        </p>
         <p className="mt-6 text-sm leading-relaxed text-white/90 sm:text-base">

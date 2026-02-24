@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { FadeInUp } from "@/components/ui/fade-in-up";
 
 type BlogPostPreview = {
   slug: string;
@@ -45,6 +46,7 @@ export function BlogTeaserSection() {
   return (
     <section className="bg-neutral-800 text-white">
       <div className="px-4 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <FadeInUp>
         <div className="space-y-2 pb-8">
           <p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-white/60">
             Subheading for this section
@@ -53,7 +55,9 @@ export function BlogTeaserSection() {
             Stories & art of sharing playful subsoccer
           </h2>
         </div>
+        </FadeInUp>
 
+        <FadeInUp delay={100}>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {posts.map((post) => (
             <Card
@@ -84,7 +88,9 @@ export function BlogTeaserSection() {
             </Card>
           ))}
         </div>
+        </FadeInUp>
 
+        <FadeInUp delay={200}>
         <div className="mt-10 flex justify-center">
           <Link
             href="/blog"
@@ -98,6 +104,7 @@ export function BlogTeaserSection() {
             View all posts
           </Link>
         </div>
+        </FadeInUp>
       </div>
     </section>
   );

@@ -1,9 +1,12 @@
 import Image from "next/image";
 
+import { FadeInUp } from "@/components/ui/fade-in-up";
+
 export function FeatureHighlightSection() {
   return (
     <section className="bg-neutral-800 text-white">
       <div className="px-4 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+        <FadeInUp>
         <div className="text-center space-y-3 mb-10">
           <p className="text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-white/60">
             Hear more. Feel more.
@@ -12,7 +15,9 @@ export function FeatureHighlightSection() {
             Immersive play, reimagined from the ground up.
           </h2>
         </div>
+        </FadeInUp>
 
+        <FadeInUp delay={100}>
         <div className="relative mx-auto ">
           {/* Left feature copy */}
           <div className="pointer-events-none absolute left-0 top-1/4 hidden w-52 text-left text-[0.8rem] text-white/80 sm:block">
@@ -48,12 +53,15 @@ export function FeatureHighlightSection() {
             />
           </div>
         </div>
+        </FadeInUp>
 
+        <FadeInUp delay={200}>
         <p className="mt-10 text-center text-lg text-white/70 max-w-xl mx-auto">
           With optimized tracking, responsive lighting, and match‑grade build
           quality, socc bloc turns every space into a smart training ground for
           solo drills, friendlies, and competitive play.
         </p>
+        </FadeInUp>
       </div>
     </section>
   );
